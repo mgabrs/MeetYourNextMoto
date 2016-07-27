@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "390595149621",
-    "firebase_url": "https://fir-example-d851d.firebaseio.com",
-    "project_id": "fir-example-d851d",
-    "storage_bucket": "fir-example-d851d.appspot.com"
+    "project_number": "961356297510",
+    "firebase_url": "https://test-470ef.firebaseio.com",
+    "project_id": "test-470ef",
+    "storage_bucket": "test-470ef.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:390595149621:android:d3d5601145cf30c2",
+        "mobilesdk_app_id": "1:961356297510:android:d3d5601145cf30c2",
         "android_client_info": {
           "package_name": "cardosod.com.br.firebaseexample"
         }
       },
       "oauth_client": [
         {
-          "client_id": "390595149621-ikam6kt636l51eqjlic34etelbemtuvg.apps.googleusercontent.com",
+          "client_id": "961356297510-ej80oamj9hbhe90l82k623s88p1qq5gf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBzq_DGpesH-GkcvBsaEt3MW6oMUKEps4g"
+          "current_key": "AIzaSyA5oy-g4IgPVBn4GT5Qt3Yjz0AeufsPj5s"
         }
       ],
       "services": {
