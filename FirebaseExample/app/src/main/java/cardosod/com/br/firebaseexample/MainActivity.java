@@ -19,12 +19,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView)findViewById(R.id.textView2);
+
+
 
         Firebase ref = new Firebase("https://meetyournextmoto-b9daf.firebaseio.com/");
 
         ref.child("Serial number").child(Build.SERIAL).setValue("teste@gmail.com");
         ref.child("Serial number").child("NADL456724").setValue("teste2@gmail.com");
+
+
+
     }
 }
 
