@@ -27,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //add information button
+        final Button orderButton = (Button)findViewById(R.id.buttonConf);
+
+        //reject button
+        final Button exitButton = (Button)findViewById(R.id.jasonButton);
+
         //dynamic menu
         RadioGroup group = (RadioGroup) findViewById(R.id.rgTerms);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
@@ -36,17 +42,17 @@ public class MainActivity extends AppCompatActivity {
                 int radioButtonID = group.getCheckedRadioButtonId();
                 View radioButton = group.findViewById(radioButtonID);
                 int idx = group.indexOfChild(radioButton);
-                //string
-                Log.d("Clickkkkkk: ", String.valueOf(idx));
 
                 RelativeLayout layout = (RelativeLayout) findViewById(R.id.layoutMagic);
 
                 switch (idx) {
                     case 0:
                         layout.setVisibility(View.VISIBLE);
+                        exitButton.setVisibility(View.INVISIBLE);
                         break;
                     case 1:
                         layout.setVisibility(View.INVISIBLE);
+                        exitButton.setVisibility(View.VISIBLE);
                     default:
                         break;
                 }
@@ -61,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         //Log.d("Pramesh: ", service.getToken());
         ref.child("Serial number").child(Build.SERIAL).setValue(service.getToken());
 
-        Button orderButton = (Button)findViewById(R.id.testButton);
+
 
         orderButton.setOnClickListener(new View.OnClickListener() {
 
@@ -69,6 +75,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SuggestionActivity.class);
                 startActivity(intent);
+            }
+
+        });
+
+        exitButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+               finish();
             }
 
         });
