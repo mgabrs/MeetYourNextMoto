@@ -19,43 +19,44 @@
         />
 
     <RadioGroup
+        android:id="@+id/rgTerms"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvText"
-        android:id="@+id/radioGroup">
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Aceito"
-        android:id="@+id/rbAgree"
-        android:checked="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignRight="@+id/tvText"
-        android:layout_alignEnd="@+id/tvText"
-        android:textSize="16dp"
-        android:fontFamily="Arial"/>
+        android:layout_below="@+id/tvText">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aceito"
+            android:id="@+id/rbAgree"
+            android:checked="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignRight="@+id/tvText"
+            android:layout_alignEnd="@+id/tvText"
+            android:textSize="16dp"
+            android:fontFamily="Arial"/>
 
-    <RadioButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Não, obrigado."
-        android:id="@+id/rbNotAgree"
-        android:layout_below="@+id/rbAgree"
-        android:checked="false"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textSize="16dp"
-        android:fontFamily="Arial"/>
-    </RadioGroup>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Não, obrigado."
+            android:id="@+id/rbNotAgree"
+            android:layout_below="@+id/rbAgree"
+            android:checked="false"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="16dp"
+            android:fontFamily="Arial"/>
+        </RadioGroup>
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignRight="@+id/radioGroup"
-        android:layout_alignEnd="@+id/radioGroup"
-        android:layout_below="@+id/radioGroup">
+        >
+        //android:layout_alignRight="@+id/radioGroup"
+        // android:layout_alignEnd="@+id/radioGroup"
+        //android:layout_below="@+id/radioGroup"
 
         <TextView
             android:layout_width="match_parent"
@@ -94,10 +95,6 @@
             android:id="@+id/etEmail"
             android:layout_alignRight="@+id/tvEmail"
             android:layout_below="@+id/tvEmail"/>
-
-
-
-
 
     </LinearLayout>
 
