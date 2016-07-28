@@ -19,16 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
+        MyFirebaseInstanceIDService service = new MyFirebaseInstanceIDService();
+        //service.sendRegistrationToServer();
 
         Firebase ref = new Firebase("https://meetyournextmoto-b9daf.firebaseio.com/");
 
-        ref.child("Serial number").child(Build.SERIAL).setValue("teste@gmail.com");
-        ref.child("Serial number").child("NADL456724").setValue("teste2@gmail.com");
-
-
-
+        Log.d("Pramesh: ", service.getToken());
+        ref.child("Serial number").child(Build.SERIAL).setValue(service.getToken());
     }
 }
 
