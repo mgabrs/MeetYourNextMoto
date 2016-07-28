@@ -1,9 +1,12 @@
 package cardosod.com.br.firebaseexample;
 
+import android.annotation.SuppressLint;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Build;
+import android.text.Layout;
 import android.util.Log;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.RadioGroup;
 import android.widget.RadioButton;
@@ -11,8 +14,6 @@ import android.view.*;
 import android.widget.RadioGroup.*;
 import android.widget.Button;
 import android.content.Intent;
-
-
 import com.firebase.client.Firebase;
 import com.google.firebase.database.*;
 
@@ -27,11 +28,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //dynamic menu
-        final RadioGroup group = (RadioGroup) findViewById(R.id.rgTerms);
+        RadioGroup group = (RadioGroup) findViewById(R.id.rgTerms);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
             @Override
             public void onCheckedChanged(RadioGroup group,int checkedId){
-                RadioButton button = (RadioButton) group.findViewById(checkedId);
+
+                int radioButtonID = group.getCheckedRadioButtonId();
+                View radioButton = group.findViewById(radioButtonID);
+                int idx = group.indexOfChild(radioButton);
+                //string
+                Log.d("Clickkkkkk: ", String.valueOf(idx));
+
+                RelativeLayout layout = (RelativeLayout) findViewById(R.id.layoutMagic);
+
+                switch (idx) {
+                    case 0:
+                        layout.setVisibility(View.VISIBLE);
+                        break;
+                    case 1:
+                        layout.setVisibility(View.INVISIBLE);
+                    default:
+                        break;
+                }
             }
         });
 
@@ -54,22 +72,9 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
     }
 
-    //OnCheckedChanged onCheckedChanged = new OnCheckedChanged() {
-    OnCheckedChangeListener onCheckedChanged = new OnCheckedChangeListener() {
-        @Override
-        public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId) {
-                case R.id.rbAgree:
-                    TextView TextName = (TextView) findViewById(R.id.tvName);
-                    TextName.setVisibility(View.VISIBLE);
-                    break;
-                default:
-                    break;
-            }
-        }
-    };
 }
 
 
