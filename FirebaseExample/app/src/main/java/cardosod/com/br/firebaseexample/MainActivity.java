@@ -9,6 +9,8 @@ import android.widget.RadioGroup;
 import android.widget.RadioButton;
 import android.view.*;
 import android.widget.RadioGroup.*;
+import android.widget.Button;
+import android.content.Intent;
 
 
 import com.firebase.client.Firebase;
@@ -39,7 +41,19 @@ public class MainActivity extends AppCompatActivity {
         Firebase ref = new Firebase("https://meetyournextmoto-b9daf.firebaseio.com/");
 
         //Log.d("Pramesh: ", service.getToken());
-        ref.child("Serial number").child(Build.SERIAL).setValue("test");
+        ref.child("Serial number").child(Build.SERIAL).setValue(service.getToken());
+
+        Button orderButton = (Button)findViewById(R.id.testButton);
+
+        orderButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SuggestionActivity.class);
+                startActivity(intent);
+            }
+
+        });
     }
 
     //OnCheckedChanged onCheckedChanged = new OnCheckedChanged() {
